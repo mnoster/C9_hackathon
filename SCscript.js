@@ -21,7 +21,8 @@ function getSoundCloudSong(){
         var artist = $('.artistName').val();
         artist = artist.replace(/\s/g, "_");
         SC.oEmbed('https://soundcloud.com/' + artist, {
-            maxheight: 200
+            maxheight: 150,
+            maxwidth: 800
         }, function(res) {
             $("#player").html(res.html);
         });
@@ -45,7 +46,7 @@ function getTwitterInfo(){
                 var tweet_array = [];
                 for(var i = 0; i <list_of_tweets.length; i++){
                     tweet_array.push(list_of_tweets[i].text);
-                    $('<tr>').text(tweet_array[i]).appendTo('tbody');
+                    $('<tr>').addClass('col-lg-4 col-md-5 col-xs-6').text(tweet_array[i]).appendTo('tbody');
                     // $("#twitter-feed").append(tweet_array[i]);
                 }
                 console.log('tweet array :' , tweet_array);
