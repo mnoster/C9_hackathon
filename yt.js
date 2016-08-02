@@ -103,12 +103,18 @@ function searchButtonClick (){
                 data: {q:artist,maxResults:1,type:'channel',detailLevel:'verbose'},
                 success: function(result) {
                     //console.log("channel id data ",result.data);
+                    var channelLink = "";
                     //searchChannelId = result.data[0].id;
                     console.log('AJAX Success channel function called, with the following result:', result);
                     var channelId=Object.keys(result.data);
                     console.log("channelId ", channelId);
+                    var channelURL = "https://www.youtube.com/channel/"+channelId;
+                    console.log("channelURL ",channelURL);
+                    channelLink = $('<a>').attr('href',channelURL).attr('target','_blank').text("Channel link");
+                    console.log("channelLink ",channelLink);
+                    $('#channelLink').html(channelLink);
 
-                        console.log('End of channel click function');
+                    console.log('End of channel click function');
 
                 }
             });
