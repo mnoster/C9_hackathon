@@ -1,5 +1,30 @@
+.twit-image{
+    position:fixed;
+    display:block;
+}
 #twitter-feed{
     display: inline-block;
     max-height: 240px;
     max-width: 500px;
+    border: 2px solid #717171;
+    border-radius: 2px;
+
+}
+.twitter_border_lines{
+    border-bottom:1px solid rgba(0, 0, 255, 0.41);
+    border-radius: 20px;
+    background-color: #bce8f1;
+    /*font-weight: 600;*/
+    line-height: 30px;
+    padding:10px;
+
+}
+.contain-tweets{
+    margin-top: 10px;
+}
+tr{
+    padding:10px;
+}
+.contain-tweets{
+    visibility: hidden;
 }
