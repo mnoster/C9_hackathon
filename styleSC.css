@@ -12,17 +12,18 @@
 }
 .twitter_border_lines{
     border-bottom:1px solid rgba(0, 0, 255, 0.41);
-    border-radius: 20px;
     background-color: #bce8f1;
+    width: 100%;
     /*font-weight: 600;*/
     line-height: 30px;
     padding:10px;
+    display: inline-block;
 
 }
 .contain-tweets{
     margin-top: 10px;
 }
-tr{
+td{
     padding:10px;
 }
 .contain-tweets{

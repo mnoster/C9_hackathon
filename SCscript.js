@@ -26,6 +26,7 @@ function getSoundCloudSong(){ //this is the function that holds the SOundcloud s
             maxwidth: 800
         }, function(res) {
             $("#SCplayer").html(res.html);
+            $('<div><h1>Latest Tracks</h1></div>').prependTo($('#SCplayer'));
         });
     });
 }
@@ -47,8 +48,9 @@ function getTwitterInfo(){
                 var tweet_array = [];
                 for(var i = 0; i <list_of_tweets.length; i++){
                     tweet_array.push(list_of_tweets[i].text);
-                    $('<tr>').addClass('twitter_border_lines').text(tweet_array[i]).appendTo('tbody');
+                    $('<td>').addClass('twitter_border_lines').text(tweet_array[i]).appendTo('tbody');
                 }
+
                 $('.contain-tweets').css("visibility","visible");
 
 
