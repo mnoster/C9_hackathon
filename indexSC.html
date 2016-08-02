@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"
+          type="text/css"/>
+    <script src="//connect.soundcloud.com/sdk.js"></script>
+    <script src="SCscript.js"></script>
+    <link href="styleSC.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class='container'>
+    <div class='main-content row'>
+        <h1>Music Stalker</h1>
+        <p>Enter Artist Name</p><input class="artistName">
+        <button class='btn btn-default btn-success' id="embedTrack">Embed Track</button>
+        <div id="SCplayer"></div>
+    </div>
+</div>
+<div class="container">
+    <div class='contain-tweets row'>
+        <div id="twitter-feed" class=" pre-scrollable col-xs-4">
+            <table class="table">
+                <thead class=" table-bordered">
+                <tr class="" >
+                    <th><img  src='http://www.meteo.go.tz/site/images/twit.png' alt="Twitter Logo" height="32"
+                             width="32"> Artist Mentions
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
