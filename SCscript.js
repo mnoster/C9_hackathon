@@ -42,9 +42,13 @@ function getTwitterInfo(){
             success: function (response) {
                 console.log('success!', response);
                 var list_of_tweets = response.tweets.statuses;
+                var tweet_array = [];
                 for(var i = 0; i <list_of_tweets.length; i++){
-                    $("#twitter-feed").append(list_of_tweets[i].text);
+                    tweet_array.push(list_of_tweets[i].text);
+                    $('<tr>').text(tweet_array[i]).appendTo('tbody');
+                    // $("#twitter-feed").append(tweet_array[i]);
                 }
+                console.log('tweet array :' , tweet_array);
 
             },
             error: function (response) {
