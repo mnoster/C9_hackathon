@@ -1,9 +1,16 @@
 body{
-    background-image: url("https://static.pexels.com/photos/92083/pexels-photo-92083-large.jpeg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: right;
-    background-size: 100%;
+    /*background-image: url("images/vinyl.jpeg");*/
+    /*background-image-size: 100%;*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
+    /*background-position: right;*/
+    /*background-size: 100%;*/
+
+    background: url("images/vinyl.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 /**************background style for search page*****************/
 
@@ -18,6 +25,7 @@ div.main-content{
     /*background-size: 100%;*/
 
 }
+
 .main-content h1{
     font-size: 5em;
     font-weight: bold;
