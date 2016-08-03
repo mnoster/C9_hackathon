@@ -65,11 +65,12 @@ i{
 }
 #twitter-feed{
     display: inline-block;
-    max-height: 240px;
+    max-height: 600px;
     max-width: 500px;
     border: 2px solid #717171;
     border-radius: 2px;
     background-color: #2e6da4;
+    visibility: hidden;
 
 }
 
@@ -109,7 +110,9 @@ td{
 th{
     background-color: white;
 }
-
+.ticketmaster-container{
+    margin-bottom: 50px;
+}
 
 
 /*-------------styling for spotify api albums------------------*/

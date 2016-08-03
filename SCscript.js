@@ -17,6 +17,7 @@ function apply_all_click_handlers() {
         getSoundCloudSong(); //when the document loads the api functions will be ready
         getTwitterInfo();
         sp_find_artist_info();
+
     });
 }
 // initialization
@@ -37,6 +38,7 @@ function getSoundCloudSong(){ //this is the function that holds the SOundcloud s
         }, function(res) {
             $("#SCplayer").html(res.html);
             $('<div><h3>Latest Tracks</h3></div>').prependTo($('#SCplayer'));
+            $('#twitter-feed').css("visibility","visible");
         });
 }
 
@@ -61,7 +63,7 @@ function getTwitterInfo(){
                     $('<td>').addClass('twitter_border_lines').text(tweet_array[i]).appendTo($('.twitter-table-body'));
                 }
 
-                $('.contain-tweets').css("visibility","visible");
+                $('#twitter-feed').css("visibility","visible");
 
 
             },
@@ -97,7 +99,7 @@ function sp_find_artist_info(){
                 var album_title = albums.items[k].name;
                 var images = $("<img>").attr("src", album_images);
                 var title = $("<div>").addClass("sp_album_title").text(album_title);
-                var sp_container = $("<li>").addClass("sp_container col-xs-3").append(images, title);
+                var sp_container = $("<li>").addClass("sp_container").append(images, title);
                 $(".spotify_albums_list").append(sp_container);
 
             }
