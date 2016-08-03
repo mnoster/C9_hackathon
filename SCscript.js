@@ -38,7 +38,7 @@ function getSoundCloudSong(){ //this is the function that holds the SOundcloud s
         }, function(res) {
             $("#SCplayer").html(res.html);
             $('<div><h3>Latest Tracks</h3></div>').prependTo($('#SCplayer'));
-            $('#twitter-feed').css("visibility","visible");
+            $('.contain-tweets').css("visibility","visible");
         });
 }
 
