@@ -49,6 +49,8 @@ td{
     position: relative;
     overflow: hidden;
     text-align: center;
+    height: 250px;
+    width:250px;
 }
 .sp_container:hover .sp_album_title{
     transform: translateY(0%);
