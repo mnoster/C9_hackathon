@@ -1,17 +1,21 @@
 body{
-    background-color: #222222;
-}
-/**************background style for search page*****************/
-
-
-div.main-content{
-    /*width: 100%;*/
-    /*height: 85vh;*/
     background-image: url("https://static.pexels.com/photos/92083/pexels-photo-92083-large.jpeg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: right;
     background-size: 100%;
+}
+/**************background style for search page*****************/
+
+
+div.main-content{
+    width: 100%;
+    height: 40vh;
+    /*background-image: url("https://static.pexels.com/photos/92083/pexels-photo-92083-large.jpeg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
+    /*background-position: right;*/
+    /*background-size: 100%;*/
 
 }
 .main-content h1{
