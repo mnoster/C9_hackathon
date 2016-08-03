@@ -1,5 +1,6 @@
 var searchVideoId = "";
 $(document).ready(function(){
+    console.log("in the dom ready function");
     searchButtonClick ();
 });//end of dom load
 function searchButtonClick (){
@@ -14,13 +15,19 @@ function searchButtonClick (){
             data: {q:artist,maxResults:3,detailLevel:'verbose'},
             success: function(result) {
                 searchVideoId = result.video[0].id;
-                console.log('AJAX Success video function called, with the following result:', result);
+                console.log('AJAX Success video function called for,'+artist+' with the following result:', result);
                 // 2. This code loads the IFrame Player API code asynchronously.
+                console.log('creating the dom element for video ',searchVideoId);
                 var tag = document.createElement('script');
                 tag.src = "https://www.youtube.com/iframe_api";
                 var firstScriptTag = document.getElementsByTagName('script')[0];
                 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-                console.log('End of click function****************');
+                
+            },
+            error: function(result) {
+                searchVideoId = result.video[0].id;
+                console.log('AJAX Error video function called, with the following result:', result);
+                
             }
         });
 
@@ -41,11 +48,11 @@ function searchButtonClick (){
                 channelLink = $('<a>').attr('href',channelURL).attr('target','_blank').text("Channel link");
                 console.log("channelLink ",channelLink);
                 $('#channelLink').html(channelLink);
-                console.log('End of channel click function');
+                 
             }
 
         });
-
+        console.log('End of click function****************');
     }); // end of button click handler
 }
 
@@ -62,7 +69,7 @@ function searchButtonClick (){
 //    after the API code downloads.
 var player;
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
+    player = new YT.Player('ytPlayer', {
         height: '390',
         width: '640', //height and width can be modified
         videoId: searchVideoId,
