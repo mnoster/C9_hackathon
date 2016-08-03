@@ -36,12 +36,7 @@ function searchTicketMaster(search_term, latLong) {
         async: true,
         dataType: "json",
         success: function (json) {
-            console.log('json response next line:');
-            console.log(json);
-            console.log('latLong: ' + latLong);
-
             if (json.hasOwnProperty('_embedded') == false) {
-                console.log('cant find json._embedded');
                 $('.tmRow').remove();
                 $('<tr>').addClass('tmRow').html('TicketMaster does not have any upcoming events for ' + search_term).appendTo('#results');
                 return;
@@ -63,14 +58,12 @@ function searchTicketMaster(search_term, latLong) {
                     }
                     previous_groupId = event_object.groupId;
                     if (event_object.eventUrl === undefined) {
-                        console.log('http://www.ticketmaster.com/event/' + event_object.id);
                         var buyLink = 'http://www.ticketmaster.com/event/' + event_object.id;
                     } else {
                         var buyLink = event_object.eventUrl;
                     }
                     var event_object_emb = json._embedded.events[i]._embedded;
                     for (a = 0; a < event_object_emb.categories.length; a++) {
-                        console.log('embedded category: ' + event_object_emb.categories[a].name);
                     }
                     var tr = $('<tr>').addClass('tmRow');
                     var name = event_object_emb.attractions[0].name;
