@@ -1,4 +1,5 @@
 var searchVideoId = "";
+var firstTime = true;
 $(document).ready(function(){
     console.log("in the dom ready function");
     searchButtonClick ();
@@ -6,6 +7,8 @@ $(document).ready(function(){
 function searchButtonClick (){
     //button click handler
     $('#embedTrack').click(function(){
+        $('#youtube_area').html('');
+        
         var artist = $('.artistName').val();
         // $('#player').text('');
         // $('.html5-video-player').html('');
@@ -24,7 +27,9 @@ function searchButtonClick (){
                 tag.src = "https://www.youtube.com/iframe_api";
                 var firstScriptTag = document.getElementsByTagName('script')[0];
                 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-                
+                if (!firstTime){
+                    player.loadVideoById(searchVideoId);
+                }
             },
             error: function(result) {
                 searchVideoId = result.video[0].id;
@@ -47,7 +52,8 @@ function searchButtonClick (){
                 console.log("channelId ", channelId);
                 var channelURL = "https://www.youtube.com/channel/"+channelId;
                 console.log("channelURL ",channelURL);
-                channelLink = $('<a>').attr('href',channelURL).attr('target','_blank').text("Channel link");
+                //var youTubeImage = $('img').attr('src','images/youtube-channel-logo.jpg');
+                channelLink = $('<a>').attr('href',channelURL).attr('target','_blank').text("Channel");
                 console.log("channelLink ",channelLink);
                 $('#channelLink').html(channelLink);
                  
@@ -80,6 +86,7 @@ function onYouTubeIframeAPIReady() {
             'onStateChange': onPlayerStateChange
         }
     });
+    firstTime = false;
 }
 
 // 4. The API will call this function when the video player is ready.
