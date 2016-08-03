@@ -11,6 +11,9 @@ $(document).ready(function() {
 });
 function apply_all_click_handlers() {
     $("#embedTrack").click(function () {
+        $('html,body').animate({
+                scrollTop: $("tbody").offset().top},
+            'slow');
         getSoundCloudSong(); //when the document loads the api functions will be ready
         getTwitterInfo();
         sp_find_artist_info();
@@ -33,7 +36,7 @@ function getSoundCloudSong(){ //this is the function that holds the SOundcloud s
             maxwidth: 800
         }, function(res) {
             $("#SCplayer").html(res.html);
-            $('<div><h1>Latest Tracks</h1></div>').prependTo($('#SCplayer'));
+            $('<div><h3>Latest Tracks</h3></div>').prependTo($('#SCplayer'));
         });
 }
 
@@ -93,8 +96,8 @@ function sp_find_artist_info(){
                 var album_title = albums.items[k].name;
                 var images = $("<img>").attr("src", album_images);
                 var title = $("<div>").addClass("sp_album_title").text(album_title);
-                var sp_container = $("<div>").addClass("sp_container col-xs-3").append(images, title);
-                $(".sp_album_area").append(sp_container);
+                var sp_container = $("<li>").addClass("sp_container col-xs-3").append(images, title);
+                $(".spotify_albums_list").append(sp_container);
 
             }
         }

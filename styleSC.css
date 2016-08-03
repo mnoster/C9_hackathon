@@ -1,3 +1,14 @@
+body{
+    background-color: #2e6da4;
+}
+header{
+    height:30vh;
+}
+main{
+    height: 60vh;
+    border-bottom: 18px solid lightgrey;
+
+}
 .main-content{
     text-align: center;
 }
@@ -12,7 +23,17 @@
     border: 2px solid #717171;
     border-radius: 2px;
 
+
 }
+nav{
+    margin-top: 15px;
+    background-color: #5e5e5e;
+    color: white;
+}
+.nav-list-option{
+    border-bottom: 1.7px solid #464646;
+}
+
 .twitter_border_lines{
     border-bottom:1px solid rgba(0, 0, 255, 0.41);
     background-color: #bce8f1;
@@ -25,13 +46,19 @@
 }
 .contain-tweets{
     margin-top: 10px;
+    visibility: hidden;
+
 }
+
+
 td{
     padding:10px;
 }
-.contain-tweets{
-    visibility: hidden;
+th{
+    background-color: white;
 }
+
+
 
 /*-------------styling for spotify api albums------------------*/
 .sp_album_title{
@@ -49,9 +76,24 @@ td{
     position: relative;
     overflow: hidden;
     text-align: center;
-    height: 250px;
-    width:250px;
+
 }
 .sp_container:hover .sp_album_title{
     transform: translateY(0%);
+}
+.sp_album_area{
+    display: inline;
+}
+p{
+    width: 250px;
+    display: inline;
+    height:250px;
+}
+li{
+    display: inline-block;
+}
+li img{
+    height: 200px;
+    width:200px;
+    padding: 8px;
 }
