@@ -143,3 +143,9 @@ li img{
 #channelLink {
     display: inline;
 }
+#channelLink a {
+    color: #8EA489;
+    text-decoration: none;
+    font-size: larger;
+    font-weight: bolder;
+}

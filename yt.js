@@ -1,26 +1,22 @@
 var searchVideoId = "";
 var firstTime = true;
 $(document).ready(function(){
-    console.log("in the dom ready function");
     searchButtonClick ();
 });//end of dom load
 function searchButtonClick (){
     //button click handler
     $('.embedTrack').click(function(){
         var artist = $('.artistName').val();
-        // $('#player').text('');
-        // $('.html5-video-player').html('');
+
         $.ajax({
             method: 'post',
             dataType: 'json',
             url: 'http://s-apis.learningfuze.com/hackathon/youtube/search.php',
-            //data: {q:'adele',maxResults:3,type:'channel',detailLevel:'verbose'},
             data: {q:artist,maxResults:3,detailLevel:'verbose'},
             success: function(result) {
                 searchVideoId = result.video[0].id;
                 console.log('AJAX Success video function called for,'+artist+' with the following result:', result);
                 // 2. This code loads the IFrame Player API code asynchronously.
-                console.log('creating the dom element for video ',searchVideoId);
                 var tag = document.createElement('script');
                 tag.src = "https://www.youtube.com/iframe_api";
                 var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -42,17 +38,11 @@ function searchButtonClick (){
             url: 'http://s-apis.learningfuze.com/hackathon/youtube/search.php',
             data: {q:artist,maxResults:1,type:'channel',detailLevel:'verbose'},
             success: function(result) {
-                //console.log("channel id data ",result.data);
                 var channelLink = "";
-                //searchChannelId = result.data[0].id;
                 console.log('AJAX Success channel function called, with the following result:', result);
                 var channelId=Object.keys(result.data);
-                console.log("channelId ", channelId);
                 var channelURL = "https://www.youtube.com/channel/"+channelId;
-                console.log("channelURL ",channelURL);
-                //var youTubeImage = $('img').attr('src','images/youtube-channel-logo.jpg');
-                channelLink = $('<a>').attr('href',channelURL).attr('target','_blank').text("Channel");
-                console.log("channelLink ",channelLink);
+                channelLink = $('<a>').attr('href',channelURL).attr('target','_blank').text("Artist Channel");
                 $('#channelLink').html(channelLink);
                  
             }
