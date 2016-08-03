@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $('.ticketmaster-container').css("visibility","hidden");
     $('.embedTrack').click(function () {
         var search_term = $('.artistName').val();
         var postal_code = $('#postalCode').val();
@@ -20,7 +21,7 @@ function getLatLong(postal_code) {
         success: function (result) {
             var lat = result.results[0].geometry.location.lat;
             var long = result.results[0].geometry.location.lng;
-            var search_term = $('#artistName').val();
+            var search_term = $('.artistName').val();
             var latLong = lat + ',' + long;
             searchTicketMaster(search_term, latLong);
         },
@@ -79,6 +80,7 @@ function searchTicketMaster(search_term, latLong) {
                     tr.append(nameTD, dateTimeTD, locationTD, buyLinkTD);
                     $('#results').append(tr);
                 }
+                $('.ticketmaster-container').css("visibility","visible");
             }
         },
         error: function (xhr, status, err) {
