@@ -1,8 +1,42 @@
 body{
-    background-color: #2e6da4;
+
 }
-header{
-    height:30vh;
+/**************background style for search page*****************/
+div.main-content{
+    width: 100%;
+    height: 85vh;
+    background-image: url("https://static.pexels.com/photos/92083/pexels-photo-92083-large.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right;
+    background-size: 100%;
+}
+.main-content h1{
+    font-size: 5em;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+/********************Footer to hold about us link and social media links**********************/
+footer{
+    bottom: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 6vh;
+    color: white;
+    font-size: 2em;
+
+}
+footer p{
+    vertical-align: text-bottom;
+    letter-spacing: 3px;
+    margin: 4px 0 0 4px;
+}
+i{
+    float: right;
+    letter-spacing: 10px;
+    vertical-align: text-bottom;
+    margin: 4px;
 }
 main{
     height: 60vh;
