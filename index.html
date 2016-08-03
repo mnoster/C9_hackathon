@@ -15,38 +15,43 @@
 <body>
 
 <header class="navbar navbar-fixed-top">
-    <div class="container-fluid">
-        <div class = "navbar-header col-sm-3 ">
-            <!--<a class = "navbar-brand" href = "#">AB</a>-->
-            <div class="contain-input">
-                <input class="artistName form-control" placeholder = 'Enter Artist Name'>
-
-            </div>
+    <div class="navbar-header contain-input col-xs-9 col-sm-3 ">
+        <input class="artistName form-control" placeholder='Enter Artist Name'>
     </div>
-        <button class='embedTrack btn btn-default btn-success'>search</button>
-
+    <button class='embedTrack btn btn-default btn-success'>search</button>
 </header>
 
-<div class='container main-container'>
-    <div class='main-content row'>
+<!--<div class='container main-container'>-->
+    <!--<div class='main-content row'>-->
 
-    <div class="container-fluid search-container">
+    <!--<div class="container-fluid search-container">-->
 
         <!--<input class="artistName form-control" placeholder = 'Enter Artist Name'>-->
         <!--<button class='embedTrack btn btn-default btn-success col-sm-1'>search</button>-->
 
-    </div>
-    </div>
+
     <div class="container contain-api-data">
-        <div class='contain-tweets row'>
-            <div id="SCplayer"></div>
+        <div class='contain-tweets col-xs-12'>
+            <div id="SCplayer" ></div>
         </div>
-        <div class="row">
-            <div class="col-xs-6">
-                <div id="ytPlayer"></div>
-                <div id="channelLink"></div>
-            </div>
-            <div id="twitter-feed" class=" pre-scrollable col-xs-4 pull-right">
+        <!--<div class="row">-->
+            <!--<div class="col-xs-6">-->
+                <!--<div id="ytPlayer"></div>-->
+                <!--<div id="channelLink"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+
+    <div class='container-fluid main-container'>
+       <div class='main-content row'>
+
+
+
+                  <div class="col-xs-6 col-sm-9">
+                      <div id="ytPlayer"></div>
+                      <div id="channelLink"></div>
+                  </div>
+            <div id="twitter-feed" class=" pre-scrollable col-xs-4 col-sm-3">
                 <table class="table">
                     <thead class=" table-bordered">
                     <tr class="" >
@@ -60,7 +65,8 @@
                 </table>
 
             </div>
-        </div>
+       </div>
+    </div>
         <!--this is for youtube-->
 
         <div class="row">
@@ -69,10 +75,11 @@
 
         </div>
     </div>
-
+</div>
     <!-----this is for ticketmaster-->
+
     <div class="container ticketmaster-container">
-        <div class="student-add-form col-sm-12 col-md-3 pull-right">
+        <div class="col-xs-12 col-sm-12 col-md-3 pull-right">
             <!--<h4>Search TicketMaster</h4>-->
             <!--<div class="form-group input-group">-->
             <!--<span class="input-group-addon">-->
@@ -89,11 +96,11 @@
             </span>
                 <input type="text" class="form-control" name="postalCode" id="postalCode" placeholder="ZIP/Postal Code" >
             </div>
-            <button type="button" class="btn btn-success embedTrack" >Search</button>
+            <button type="button" class="btn btn-success embedTrack col-xs-12" >Search</button>
         </div>
 
-        <div class="result-list-container col-sm-12 col-md-8">
-            <table class="result-list table">
+        <div class="result-list-container col-xs-12 col-sm-12 col-md-8">
+            <table class="result-list table table-condensed">
                 <thead>
                 <tr>
                     <th>Artist</th>
@@ -109,14 +116,16 @@
 
     </div>
 
-</div>
+
 
 
 <footer class="footer">
-    <p>About</p>
-    <i class="fa fa-facebook-square" aria-hidden="true"></i>
-    <i class="fa fa-twitter-square" aria-hidden="true"></i>
-    <i class="fa fa-instagram" aria-hidden="true"></i>
+    <div class="col-xs-12">
+        <p>About</p>
+        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+    </div>
 </footer>
 </body>
 </html>
