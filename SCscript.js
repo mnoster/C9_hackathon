@@ -97,7 +97,7 @@ function sp_find_artist_info(){
                 var images = $("<img>").attr("src", album_images);
                 var title = $("<div>").addClass("sp_album_title").text(album_title);
                 var sp_container = $("<li>").addClass("sp_container col-xs-3").append(images, title);
-                $(".spotify_albums_list").append(sp_container);
+                $(".spotify_album_list").append(sp_container);
 
             }
         }

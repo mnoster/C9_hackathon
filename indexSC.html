@@ -2,7 +2,8 @@
 <html>
 <head>
 
-    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="//connect.soundcloud.com/sdk.js"></script>
     <script src="SCscript.js"></script>
@@ -10,13 +11,20 @@
     <link href="styleSC.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<header></header>
 <div class='container main-container'>
     <div class='main-content row'>
-        <h1>Artist Base</h1>
+      <div class="container-fluid">
+          <h1 class="col-sm-9 col-sm-offset-1">ARTISTbase</h1>
+      </div>
 
-        <input class="artistName" placeholder = 'Enter Artist Name'>
-        <button class='btn btn-default btn-success' id="embedTrack">sumbit</button>
+    <form class="form">
+        <div class="form-group">
+            <div class = "col-sm-6 col-sm-offset-2">
+                <input class="artistName form-control" placeholder = 'Enter Artist Name'>
+            </div>
+            <button class='btn btn-default btn-success col-sm-1' id="embedTrack">search</button>
+        </div>
+    </form>
 
     </div>
 </div>
@@ -70,8 +78,13 @@
 </div>
 
 <!--this is for spotify -->
-<ul class="spotify_albums_list"></ul>
-<div class = "sp_album_area "></div>
+<ul class="spotify_album_list"></ul>
 
+<footer class="footer">
+    <p>About</p>
+    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+    <i class="fa fa-instagram" aria-hidden="true"></i>
+</footer>
 </body>
 </html>
