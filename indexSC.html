@@ -1,25 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://code.jquery.com/jquery.min.js"></script>
+
     <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="//connect.soundcloud.com/sdk.js"></script>
     <script src="SCscript.js"></script>
     <!--<script src="Kyle_folder/spotify_js.js"></script>-->
     <link href="styleSC.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class='container'>
+<header></header>
+<div class='container main-container'>
     <div class='main-content row'>
-        <h1>Music Stalker</h1>
+        <h1>Artist Base</h1>
+
         <input class="artistName" placeholder = 'Enter Artist Name'>
-        <button class='btn btn-default btn-success' id="embedTrack">Embed Track</button>
-        <div id="SCplayer"></div>
+        <button class='btn btn-default btn-success' id="embedTrack">sumbit</button>
+
     </div>
 </div>
+
+    <main class="container">
+
+    <nav class="row">
+        <ul class="nav-list-option">
+            <li><h2>Video</h2></li>
+        </ul>
+        <ul class="nav-list-option">
+            <li><h2>Latest Tracks</h2></li>
+            </ul>
+        <ul class="nav-list-option">
+            <li><h2>Upcoming Shows</h2></li>
+            </ul>
+        <ul class="nav-list-option">
+            <li><h2>Albums</h2></li>
+            </ul>
+        <ul class="nav-list-option">
+            <li><h2>Twitter Mentions</h2></li>
+            </ul>
+        <ul class="nav-list-option">
+            <li><h2>Artist Bio</h2></li>
+        </ul>
+    </nav>
+
+
+
+</main>
 <div class="container">
+
     <div class='contain-tweets row'>
-        <div id="twitter-feed" class=" pre-scrollable col-xs-4">
+        <div id="SCplayer"></div>
+
+        <div id="twitter-feed" class=" pre-scrollable col-xs-4 pull-right">
             <table class="table">
                 <thead class=" table-bordered">
                 <tr class="" >
@@ -34,11 +67,11 @@
 
         </div>
     </div>
-    <div class = "sp_album_area"></div>
 </div>
 
 <!--this is for spotify -->
-
+<ul class="spotify_albums_list"></ul>
+<div class = "sp_album_area "></div>
 
 </body>
 </html>
