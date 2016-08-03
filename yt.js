@@ -6,9 +6,7 @@ $(document).ready(function(){
 });//end of dom load
 function searchButtonClick (){
     //button click handler
-    $('#embedTrack').click(function(){
-        $('#youtube_area').html('');
-        
+    $('.embedTrack').click(function(){
         var artist = $('.artistName').val();
         // $('#player').text('');
         // $('.html5-video-player').html('');

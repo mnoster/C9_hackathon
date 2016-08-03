@@ -10,7 +10,7 @@ $(document).ready(function() {
 
 });
 function apply_all_click_handlers() {
-    $("#embedTrack").click(function () {
+    $(".embedTrack").click(function () {
         $('html,body').animate({
                 scrollTop: $("tbody").offset().top},
             'slow');
@@ -52,13 +52,13 @@ function getTwitterInfo(){
                 search_term: artist
             },
             success: function (response) {
-                $('tbody').html('');
+                $('.twitter-table-body').html('');
                 console.log('success!', response);
                 var list_of_tweets = response.tweets.statuses;
 
                 for(var i = 0; i <list_of_tweets.length; i++){
                     tweet_array.push(list_of_tweets[i].text);
-                    $('<td>').addClass('twitter_border_lines').text(tweet_array[i]).appendTo('tbody');
+                    $('<td>').addClass('twitter_border_lines').text(tweet_array[i]).appendTo($('.twitter-table-body'));
                 }
 
                 $('.contain-tweets').css("visibility","visible");
@@ -68,7 +68,7 @@ function getTwitterInfo(){
             error: function (response) {
                 console.log('error!');
                 $('.contain-tweets').css("visibility","visible");
-                $('tbody').text("Oh no! There was an error with Twitter's server.").css({'color': 'red'});
+                $('.twitter-table-body').text("Oh no! There was an error with Twitter's server.").css({'color': 'red'});
             }
 
         })
