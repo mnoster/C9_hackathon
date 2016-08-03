@@ -14,7 +14,7 @@ div.main-content{
 .main-content h1{
     font-size: 5em;
     font-weight: bold;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
 }
 /********************Footer to hold about us link and social media links**********************/
 footer{
@@ -39,11 +39,11 @@ i{
     margin: 4px;
 }
 
-/*main{*/
-    /*height: 60vh;*/
-    /*border-bottom: 18px solid lightgrey;*/
+main{
+    height: 60vh;
+    border-bottom: 18px solid lightgrey;
 
-/*}*/
+}
 .main-content{
     text-align: center;
 }
