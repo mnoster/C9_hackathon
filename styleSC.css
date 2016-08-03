@@ -1,20 +1,37 @@
 body{
-
-}
-/**************background style for search page*****************/
-div.main-content{
-    width: 100%;
-    height: 85vh;
     background-image: url("https://static.pexels.com/photos/92083/pexels-photo-92083-large.jpeg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: right;
     background-size: 100%;
 }
+/**************background style for search page*****************/
+
+
+div.main-content{
+    width: 100%;
+    height: 40vh;
+    /*background-image: url("https://static.pexels.com/photos/92083/pexels-photo-92083-large.jpeg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
+    /*background-position: right;*/
+    /*background-size: 100%;*/
+
+}
 .main-content h1{
     font-size: 5em;
     font-weight: bold;
     letter-spacing: 5px;
+}
+.search-container{
+    padding-top: 100px;
+    height: 95vh;
+}
+.main-container{
+    margin-top: 50px;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, .8);
 }
 /********************Footer to hold about us link and social media links**********************/
 footer{
@@ -38,11 +55,7 @@ i{
     vertical-align: text-bottom;
     margin: 4px;
 }
-main{
-    height: 60vh;
-    border-bottom: 18px solid lightgrey;
 
-}
 .main-content{
     text-align: center;
 }
@@ -56,11 +69,12 @@ main{
 }
 #twitter-feed{
     display: inline-block;
-    max-height: 240px;
+    max-height: 600px;
     max-width: 500px;
     border: 2px solid #717171;
     border-radius: 2px;
     background-color: #2e6da4;
+    visibility: hidden;
 
 }
 
@@ -100,7 +114,9 @@ td{
 th{
     background-color: white;
 }
-
+.ticketmaster-container{
+    margin-bottom: 50px;
+}
 
 
 /*-------------styling for spotify api albums------------------*/
