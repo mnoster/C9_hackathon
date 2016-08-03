@@ -89,6 +89,7 @@ function sp_find_artist_info(){
         },
         success: function(response){
             $(".sp_album_area").html('');
+            $(".spotify_albums_list").html('');
             console.log(response);
             for(var k = 0; k < 4; k++) {
                 var albums = response.albums;

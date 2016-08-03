@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="//connect.soundcloud.com/sdk.js"></script>
     <script src="SCscript.js"></script>
+    <script src="yt.js"></script>
     <!--<script src="Kyle_folder/spotify_js.js"></script>-->
     <link href="styleSC.css" rel="stylesheet" type="text/css">
 </head>
@@ -48,7 +49,6 @@
 
 </main>
 <div class="container">
-
     <div class='contain-tweets row'>
         <div id="SCplayer"></div>
 
@@ -67,11 +67,19 @@
 
         </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col-xs-6">
+        <div id="player"></div>
+        <div id="channelLink"></div>
+        </div>
+    </div>
+    <div class="row">
+        <!--this is for spotify -->
+        <ul class="spotify_albums_list col-xs-6"></ul>
 
-<!--this is for spotify -->
-<ul class="spotify_albums_list"></ul>
-<div class = "sp_album_area "></div>
+    </div>
+</div>
+<!--this is for youtube-->
 
 </body>
 </html>

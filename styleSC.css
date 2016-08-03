@@ -16,6 +16,10 @@ main{
     position:fixed;
     display:block;
 }
+#SCplayer{
+    display: inline-block;
+    width:80%;
+}
 #twitter-feed{
     display: inline-block;
     max-height: 240px;
@@ -24,6 +28,9 @@ main{
     border-radius: 2px;
 
 
+}
+.visualAudible_body{
+    display:inline-block;
 }
 nav{
     margin-top: 15px;
@@ -47,6 +54,7 @@ nav{
 .contain-tweets{
     margin-top: 10px;
     visibility: hidden;
+    text-align:center;
 
 }
 
