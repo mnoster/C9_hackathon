@@ -140,3 +140,6 @@ li img{
     width:200px;
     padding: 8px;
 }
+#channelLink {
+    display: inline;
+}
