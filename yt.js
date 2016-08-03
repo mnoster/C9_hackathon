@@ -5,8 +5,10 @@ $(document).ready(function(){
 });//end of dom load
 function searchButtonClick (){
     //button click handler
-    $('button').click(function(){
+    $('#embedTrack').click(function(){
         var artist = $('.artistName').val();
+        // $('#player').text('');
+        // $('.html5-video-player').html('');
         $.ajax({
             method: 'post',
             dataType: 'json',
