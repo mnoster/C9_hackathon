@@ -1,5 +1,5 @@
 body{
-    background-image: url("https://static.pexels.com/photos/92083/pexels-photo-92083-large.jpeg");
+    background-image: url("vinyl.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: right;
@@ -22,6 +22,7 @@ div.main-content{
     font-size: 5em;
     font-weight: bold;
     letter-spacing: 5px;
+    color: white;
 }
 .search-container{
     padding-top: 100px;
