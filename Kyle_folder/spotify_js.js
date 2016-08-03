@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    $('#search').click(function(){
+    $('#embedTrack').click(function(){
         sp_find_artist_info();
-    })
+    });
 });
 
 function sp_find_artist_info(){
@@ -28,7 +28,9 @@ function sp_find_artist_info(){
                 $(".sp_album_area").append(sp_container);
 
             }
+        },
+        error: function(response){
+            console.log('there is error');
         }
-    })
+    });
 }
-

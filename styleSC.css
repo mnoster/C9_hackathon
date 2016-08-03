@@ -32,3 +32,24 @@ td{
 .contain-tweets{
     visibility: hidden;
 }
+
+/*-------------styling for spotify api albums------------------*/
+.sp_album_title{
+    background-color: rgba(0,0,0,.6);
+    overflow: hidden;
+    font-size:1.5em;
+    position: absolute;
+    bottom: 0px;
+    left: 100px;
+    color: white;
+    transform: translateY(100%);
+    transition-duration: .6s;
+}
+.sp_container{
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.sp_container:hover .sp_album_title{
+    transform: translateY(0%);
+}

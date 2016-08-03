@@ -5,10 +5,17 @@
  * Created by njporter10 on 7/19/16.
  */
 $(document).ready(function() {
-    getSoundCloudSong(); //when the document loads the api functions will be ready
-    getTwitterInfo();
+    apply_all_click_handlers();
+
 
 });
+function apply_all_click_handlers() {
+    $("#embedTrack").click(function () {
+        getSoundCloudSong(); //when the document loads the api functions will be ready
+        getTwitterInfo();
+        sp_find_artist_info();
+    });
+}
 // initialization
 function getSoundCloudSong(){ //this is the function that holds the SOundcloud song player api
     SC.initialize({ // this will initialize the client id needed for access to the SC api
@@ -16,7 +23,7 @@ function getSoundCloudSong(){ //this is the function that holds the SOundcloud s
     });
 
     // Play audio
-    $("#embedTrack").click(function() { //on the click of the submit button in the html
+ //on the click of the submit button in the html
         var player = $("#SCplayer"); //the variable of SC player will be set to the id of the song media player
         var artist = $('.artistName').val();  // the artist name will be deifined as a string of text in the
         artist = artist.replace(/\s/g, "_");
@@ -28,11 +35,10 @@ function getSoundCloudSong(){ //this is the function that holds the SOundcloud s
             $("#SCplayer").html(res.html);
             $('<div><h1>Latest Tracks</h1></div>').prependTo($('#SCplayer'));
         });
-    });
 }
 
 function getTwitterInfo(){
-    $("#embedTrack").click(function() {
+
         var feed = $("#twitter-feed");
         var artist = $('.artistName').val();
         $.ajax({
@@ -62,5 +68,35 @@ function getTwitterInfo(){
             }
 
         })
+
+}
+
+//-------spotify-----
+function sp_find_artist_info(){
+    var artist = $(".artistName").val();
+    console.log('Artist', artist);
+    $.ajax({
+        url: "https://api.spotify.com/v1/search",
+        method: "GET",
+        dataType: "json",
+        data: {
+            q: artist,
+            type: 'album'
+        },
+        success: function(response){
+            console.log(response);
+            for(var k = 0; k < 4; k++) {
+                var albums = response.albums;
+                var album_images = albums.items[k].images[1].url;
+                var album_title = albums.items[k].name;
+
+                var images = $("<img>").attr("src", album_images);
+                var title = $("<div>").addClass("sp_album_title").text(album_title);
+                // var sp_row = $("<div>").addClass("row").append(images, title);;
+                var sp_container = $("<div>").addClass("sp_container col-sm-3").append(images, title);
+                $(".sp_album_area").append(sp_container);
+
+            }
+        }
     });
 }
