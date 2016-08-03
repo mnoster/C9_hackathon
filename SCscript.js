@@ -11,9 +11,7 @@ $(document).ready(function() {
 });
 function apply_all_click_handlers() {
     $(".embedTrack").click(function () {
-        $('html,body').animate({
-                scrollTop: $("tbody").offset().top},
-            'slow');
+
         getSoundCloudSong(); //when the document loads the api functions will be ready
         getTwitterInfo();
         sp_find_artist_info();
