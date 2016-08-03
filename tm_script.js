@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    $('#search_button').click(function () {
-        var search_term = $('#artistName').val();
+    $('.embedTrack').click(function () {
+        var search_term = $('.artistName').val();
         var postal_code = $('#postalCode').val();
         if (search_term == '') return;
         if (postal_code == '') {
