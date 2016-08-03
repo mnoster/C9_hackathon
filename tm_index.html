@@ -16,27 +16,24 @@
                 <span class="glyphicon glyphicon-user"></span>
             </span>
             <input type="text" class="form-control" name="artistName" id="artistName" placeholder="Artist Name" value="Kanye West">
+            <input type="text" class="form-control" name="postalCode" id="postalCode" placeholder="Postal Code" value="90210">
         </div>
         <button type="button" class="btn btn-success" id="search_button">Search</button>
     </div>
-    <div id="result">
 
-    </div>
-
-    <div id="errorModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <p class="modal-title">ERROR!</p>
-                </div>
-                <div class="modal-body">
-                    <p id="modal_message"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
+    <div class="result-list-container col-sm-12 col-md-8">
+        <table class="result-list table">
+            <thead>
+            <tr>
+                <th>Artist</th>
+                <th>Date & Time</th>
+                <th>Location</th>
+                <th>Buy Tix</th>
+            </tr>
+            </thead>
+            <tbody id="results">
+            </tbody>
+        </table>
     </div>
 
 </div>
