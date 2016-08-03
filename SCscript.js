@@ -38,7 +38,7 @@ function getSoundCloudSong(){ //this is the function that holds the SOundcloud s
 }
 
 function getTwitterInfo(){
-
+        var tweet_array = [];
         var feed = $("#twitter-feed");
         var artist = $('.artistName').val();
         $.ajax({
@@ -49,9 +49,10 @@ function getTwitterInfo(){
                 search_term: artist
             },
             success: function (response) {
+                $('tbody').html('');
                 console.log('success!', response);
                 var list_of_tweets = response.tweets.statuses;
-                var tweet_array = [];
+
                 for(var i = 0; i <list_of_tweets.length; i++){
                     tweet_array.push(list_of_tweets[i].text);
                     $('<td>').addClass('twitter_border_lines').text(tweet_array[i]).appendTo('tbody');
@@ -84,16 +85,15 @@ function sp_find_artist_info(){
             type: 'album'
         },
         success: function(response){
+            $(".sp_album_area").html('');
             console.log(response);
             for(var k = 0; k < 4; k++) {
                 var albums = response.albums;
                 var album_images = albums.items[k].images[1].url;
                 var album_title = albums.items[k].name;
-
                 var images = $("<img>").attr("src", album_images);
                 var title = $("<div>").addClass("sp_album_title").text(album_title);
-                // var sp_row = $("<div>").addClass("row").append(images, title);;
-                var sp_container = $("<div>").addClass("sp_container col-sm-3").append(images, title);
+                var sp_container = $("<div>").addClass("sp_container col-xs-3").append(images, title);
                 $(".sp_album_area").append(sp_container);
 
             }
