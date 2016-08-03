@@ -7,11 +7,10 @@
 $(document).ready(function() {
     apply_all_click_handlers();
 
-
 });
 function apply_all_click_handlers() {
     $(".embedTrack").click(function () {
-
+        $(".artist_base").fadeOut();
         getSoundCloudSong(); //when the document loads the api functions will be ready
         getTwitterInfo();
         sp_find_artist_info();
@@ -35,7 +34,7 @@ function getSoundCloudSong(){ //this is the function that holds the SOundcloud s
             maxwidth: 800
         }, function(res) {
             $("#SCplayer").html(res.html);
-            $('<div><h3>Latest Tracks</h3></div>').prependTo($('#SCplayer'));
+            $('<div><h3>Latest Tracks</h3></div>').addClass('artist_base').prependTo($('#SCplayer'));
             $('.contain-tweets').css("visibility","visible");
         });
 }

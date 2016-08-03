@@ -42,8 +42,16 @@ div.main-content{
 .main-container{
         margin-top: 10vh;
 }
+h1{
+    font-size: 300px;
+}
 .navbar{
     background-color: rgba(0, 0, 0, .8);
+}
+.artist_base{
+    color: whitesmoke;
+    font-size: larger;
+    text-shadow: 2px 2px #222222;
 }
 /********************Footer to hold about us link and social media links**********************/
 footer{

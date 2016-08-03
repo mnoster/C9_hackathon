@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="styleSC.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href="styleSC.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="//connect.soundcloud.com/sdk.js"></script>
     <script src="SCscript.js"></script>
@@ -15,13 +15,12 @@
 <body>
 
 <header class="navbar navbar-fixed-top">
-    <div class="container-fluid">
-        <div class = "navbar-header col-sm-3 ">
+    <!--<div class="container-fluid">-->
+        <div class = "navbar-header contain-input  col-sm-3 ">
             <!--<a class = "navbar-brand" href = "#">AB</a>-->
-            <div class="contain-input">
+
                 <input class="artistName form-control" placeholder = 'Enter Artist Name'>
 
-            </div>
     </div>
         <button class='embedTrack btn btn-default btn-success'>search</button>
 
@@ -31,7 +30,8 @@
     <div class='main-content row'>
 
     <div class="container-fluid search-container">
-
+        <!--<img class="artist_base" src="images/transparent_text_effect.png">-->
+        <h1 class="artist_base">ArtistBase</h1>
         <!--<input class="artistName form-control" placeholder = 'Enter Artist Name'>-->
         <!--<button class='embedTrack btn btn-default btn-success col-sm-1'>search</button>-->
 
