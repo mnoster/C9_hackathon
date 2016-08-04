@@ -48,10 +48,14 @@ h1{
 .navbar{
     background-color: rgba(0, 0, 0, .8);
 }
+.instructions{
+    color: #f4f4f4;
+    text-shadow: 2px 2px #222222;
+}
 .artist_base{
     color: whitesmoke;
     font-size: larger;
-    text-shadow: 2px 2px #222222;
+    text-shadow: 3px 2px #222222;
 }
 /********************Footer to hold about us link and social media links**********************/
 footer{

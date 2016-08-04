@@ -11,6 +11,7 @@ $(document).ready(function() {
 function apply_all_click_handlers() {
     $(".embedTrack").click(function () {
         $(".artist_base").fadeOut();
+        $('.instructions').fadeOut();
         getSoundCloudSong(); //when the document loads the api functions will be ready
         getTwitterInfo();
         sp_find_artist_info();

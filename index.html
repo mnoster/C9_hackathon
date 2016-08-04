@@ -32,6 +32,7 @@
     <div class="container-fluid search-container">
         <!--<img class="artist_base" src="images/transparent_text_effect.png">-->
         <h1 class="artist_base">ArtistBase</h1>
+        <h2 class ="instructions" >Welcome! Enter an artist name in the search bar.</h2>
         <!--<input class="artistName form-control" placeholder = 'Enter Artist Name'>-->
         <!--<button class='embedTrack btn btn-default btn-success col-sm-1'>search</button>-->
 
@@ -71,7 +72,7 @@
     </div>
 
     <!-----this is for ticketmaster-->
-    <div class="container ticketmaster-container">
+    <div class="container ticketmaster-container" id='zipSearch'>
         <div class="student-add-form col-sm-12 col-md-3 pull-right">
             <!--<h4>Search TicketMaster</h4>-->
             <!--<div class="form-group input-group">-->
@@ -87,9 +88,9 @@
             <span class="input-group-addon">
                 <span class="glyphicon glyphicon-map-marker"></span>
             </span>
-                <input type="text" class="form-control" name="postalCode" id="postalCode" placeholder="ZIP/Postal Code" >
+                <input type="text" class="form-control" name="postalCode" id="postalCode" placeholder="Narrow Results by ZIP Code" >
             </div>
-            <button type="button" class="btn btn-success embedTrack" >Search</button>
+            <button type="button" class="btn btn-success embedTrack" id="narrowResults">narrow results</button>
         </div>
 
         <div class="result-list-container col-sm-12 col-md-8">
