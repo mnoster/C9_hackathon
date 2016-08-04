@@ -32,7 +32,7 @@ function getSoundCloudSong(){ //this is the function that holds the SOundcloud s
         artist = artist.replace(".", "_");
         SC.oEmbed('https://soundcloud.com/' + artist, {
             maxheight: 150,
-            maxwidth: 800
+            // maxwidth: 800
         }, function(res) {
             $("#SCplayer").html(res.html);
             $('<div><h3>Latest Tracks</h3></div>').addClass('artist_base').prependTo($('#SCplayer'));

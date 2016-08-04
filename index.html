@@ -2,8 +2,10 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link href="styleSC.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="//connect.soundcloud.com/sdk.js"></script>
@@ -15,44 +17,65 @@
 <body>
 
 <header class="navbar navbar-fixed-top">
-    <!--<div class="container-fluid">-->
-        <div class = "navbar-header contain-input  col-sm-3 ">
-            <!--<a class = "navbar-brand" href = "#">AB</a>-->
+    <!--<<<<<<< HEAD-->
+    <!--&lt;!&ndash;<div class="container-fluid">&ndash;&gt;-->
+    <!--<div class = "navbar-header contain-input  col-sm-3 ">-->
+    <!--&lt;!&ndash;<a class = "navbar-brand" href = "#">AB</a>&ndash;&gt;-->
 
-                <input class="artistName form-control" placeholder = 'Enter Artist Name'>
+    <!--<input class="artistName form-control" placeholder = 'Enter Artist Name'>-->
 
+    <!--=======-->
+    <div class="navbar-header contain-input col-xs-9 col-sm-3 ">
+        <input class="artistName form-control" placeholder='Enter Artist Name'>
     </div>
-        <button class='embedTrack btn btn-default btn-success'>search</button>
-
+    <button class='embedTrack btn btn-default btn-success'>search</button>
 </header>
 
 <div class='container main-container'>
-    <div class='main-content row'>
+<div class='main-content row'>
 
+<!--<<<<<<< HEAD-->
+<div class="container-fluid search-container">
+    <!--<img class="artist_base" src="images/transparent_text_effect.png">-->
+    <h1 class="artist_base">ArtistBase</h1>
+    <h2 class="instructions">Welcome! Enter an artist name in the search bar.</h2>
+</div>
+    <!--=======-->
     <div class="container-fluid search-container">
-        <!--<img class="artist_base" src="images/transparent_text_effect.png">-->
-        <h1 class="artist_base">ArtistBase</h1>
-        <h2 class ="instructions" >Welcome! Enter an artist name in the search bar.</h2>
-        <!--<input class="artistName form-control" placeholder = 'Enter Artist Name'>-->
-        <!--<button class='embedTrack btn btn-default btn-success col-sm-1'>search</button>-->
 
-    </div>
-    </div>
+    <!--&gt;>>>>>> fd2b8f0ff14515991851144b9c708d1e7eed6958-->
+    <!--&lt;!&ndash;<input class="artistName form-control" placeholder = 'Enter Artist Name'>&ndash;&gt;-->
+    <!--&lt;!&ndash;<button class='embedTrack btn btn-default btn-success col-sm-1'>search</button>&ndash;&gt;-->
+</div>
+</div>
     <div class="container contain-api-data">
-        <div class='contain-tweets row'>
+        <div class='contain-tweets col-xs-12'>
             <div id="SCplayer"></div>
         </div>
-        <div class="row">
-            <div class="col-xs-6">
-                <div id="ytPlayer"></div>
-                <div id="channelLink"></div>
+        <!--<div class="row">-->
+        <!--<div class="col-xs-6">-->
+        <!--<div id="ytPlayer"></div>-->
+        <!--<div id="channelLink"></div>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+
+    <div class='container-fluid main-container'>
+        <div class='main-content row'>
+
+
+            <div class="yt_section col-xs-12 col-sm-8 col-md-8 ">
+                <div id="ytPlayer" class="col-sm-12"></div>
+                <div>
+                <div id="channelLink" class="col-sm-6"></div>
+                </div>
             </div>
-            <div id="twitter-feed" class=" pre-scrollable col-xs-4 pull-right">
+            <div id="twitter-feed" class=" pre-scrollable col-xs-10 col-xs-push-1 col-sm-3">
                 <table class="table">
                     <thead class=" table-bordered">
-                    <tr class="" >
-                        <th><img  src='http://www.meteo.go.tz/site/images/twit.png' alt="Twitter Logo" height="32"
-                                  width="32"> Artist Mentions
+                    <tr class="">
+                        <th><img src='http://www.meteo.go.tz/site/images/twit.png' alt="Twitter Logo" height="32"
+                                 width="32"> Artist Mentions
                         </th>
                     </tr>
                     </thead>
@@ -62,62 +85,67 @@
 
             </div>
         </div>
-        <!--this is for youtube-->
-
-        <div class="row">
-            <!--this is for spotify -->
-            <ul class="spotify_albums_list col-xs-12"></ul>
-
-        </div>
     </div>
+    <!--this is for youtube-->
 
-    <!-----this is for ticketmaster-->
-    <div class="container ticketmaster-container">
-        <div class="student-add-form col-sm-12 col-md-3 pull-right">
-            <!--<h4>Search TicketMaster</h4>-->
-            <!--<div class="form-group input-group">-->
-            <!--<span class="input-group-addon">-->
-            <!--<span class="glyphicon glyphicon-user"></span>-->
-            <!--</span>-->
-            <!--&lt;!&ndash;<input type="text" class="form-control" name="artistName" id="artistName" placeholder="Artist Name" value="Kanye West">&ndash;&gt;-->
+    <div class="row">
+        <!--this is for spotify -->
+        <ul class="spotify_albums_list col-xs-12"></ul>
 
-            <!--</div>-->
+    </div>
+<!--</div>-->
+<!-----this is for ticketmaster-->
+
+<div class="container ticketmaster-container">
+    <div class="col-xs-12 col-sm-12 col-md-3 pull-right">
+        <!--<h4>Search TicketMaster</h4>-->
+        <!--<div class="form-group input-group">-->
+        <!--<span class="input-group-addon">-->
+        <!--<span class="glyphicon glyphicon-user"></span>-->
+        <!--</span>-->
+        <!--&lt;!&ndash;<input type="text" class="form-control" name="artistName" id="artistName" placeholder="Artist Name" value="Kanye West">&ndash;&gt;-->
+
+        <!--</div>-->
 
 
-            <div id="zipSearch" class="form-group input-group">
+        <div id="zipSearch" class="form-group input-group">
             <span class="input-group-addon">
                 <span class="glyphicon glyphicon-map-marker"></span>
             </span>
 
 
-
-                <input type="text" class="form-control" name="postalCode" id="postalCode" placeholder="Narrow results by ZIP/Postal Code" >
-            </div>
-            <button type="button" class="btn btn-success embedTrack" id="narrowResults" >Search</button>
-
+            <input type="text" class="form-control" name="postalCode" id="postalCode"
+                   placeholder="Narrow results by ZIP/Postal Code">
         </div>
 
-        <div class="result-list-container col-sm-12 col-md-8">
-            <table class="result-list table">
-                <thead>
-                <tr>
-                    <th>Artist</th>
-                    <th>Date & Time</th>
-                    <th>Location</th>
-                    <th>Buy Tickets</th>
-                </tr>
-                </thead>
-                <tbody id="results">
-                </tbody>
-            </table>
-        </div>
+        <button type="button" class="btn btn-success embedTrack col-xs-12" id="narrowResults">Narrow Results</button>
+
+
+    </div>
+
+    <div class="result-list-container col-xs-12 col-sm-12 col-md-8">
+        <table class="result-list table table-condensed">
+            <thead>
+            <tr>
+                <th>Artist</th>
+                <th>Date & Time</th>
+                <th>Location</th>
+                <th>Buy Tickets</th>
+            </tr>
+            </thead>
+            <tbody id="results">
+            </tbody>
+        </table>
     </div>
 </div>
+</div>
 <footer class="footer">
-    <p>About</p>
-    <i class="fa fa-facebook-square" aria-hidden="true"></i>
-    <i class="fa fa-twitter-square" aria-hidden="true"></i>
-    <i class="fa fa-instagram" aria-hidden="true"></i>
+    <div class="col-xs-12 col-sm-12">
+        <p>About</p>
+        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+    </div>
 </footer>
 </body>
 </html>

@@ -36,6 +36,7 @@ div.main-content{
 .embedTrack{
     margin-top: 5px;
 }
+
 .search-container{
 
 }
@@ -80,7 +81,9 @@ i{
     vertical-align: text-bottom;
     margin: 4px;
 }
-
+.yt_section{
+    height: 500px;
+}
 .main-content{
     text-align: center;
 }
@@ -180,12 +183,13 @@ li{
     display: inline-block;
 }
 li img{
-    height: 200px;
-    width:200px;
+    height: 250px;
+    width:250px;
     padding: 8px;
 }
 #channelLink {
     display: inline;
+text-align:left;
 }
 #channelLink a {
     color: #4F634F;
@@ -193,4 +197,9 @@ li img{
     font-size: 1.5em;
     font-weight: bolder;
     background-color: rgba(255, 255, 255, 0.9);
+
+}
+.tmRow{
+    color:white;
+    background-color: rgba(21, 21, 21, 0.8);
 }
