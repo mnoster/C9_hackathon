@@ -68,7 +68,9 @@ i{
     vertical-align: text-bottom;
     margin: 4px;
 }
-
+.yt_section{
+    height: 500px;
+}
 .main-content{
     text-align: center;
 }
