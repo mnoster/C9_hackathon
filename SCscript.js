@@ -15,7 +15,7 @@ function apply_all_click_handlers() {
         getSoundCloudSong(); //when the document loads the api functions will be ready
         getTwitterInfo();
         sp_find_artist_info();
-
+        getWiki();
     });
 }
 // initialization
@@ -99,4 +99,43 @@ function sp_find_artist_info(){
             }
         }
     });
+}
+function toTitleCase(str)// this will return the first letter of each word as a string with capitalize, the wiki url requires the words to be capitalized
+{
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+function getWiki(){
+    var artist = $('.artistName').val();
+    artist = toTitleCase(artist);
+    artist = artist.replace(/\s/g, "_");
+    artist = artist.replace(".", "_");
+    console.log('artist wiki:' , artist);
+    $.ajax({
+        type: "GET",
+        url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page="+artist+"&callback=?",
+        contentType: "application/json; charset=utf-8",
+        async: false,
+        dataType: "json",
+        success: function (data) {
+            console.log('wiki data: ', data);
+            var markup = data.parse.text["*"];
+            var blurb = $('.wiki-div').html(markup);
+            //
+            // // remove links as they will not work
+            // blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
+            //
+            // // remove any references
+            // blurb.find('sup').remove();
+            //
+            // // remove cite error
+            // blurb.find('.mw-ext-cite-error').remove();
+            // $('#article').html($(blurb).find('p'));
+            // $('b').css('visibility','hidden');
+
+
+        },
+        error: function (errorMessage) {
+        }
+    });
+
 }

@@ -1,10 +1,4 @@
 body{
-    /*background-image: url("images/vinyl.jpeg");*/
-    /*background-image-size: 100%;*/
-    /*background-repeat: no-repeat;*/
-    /*background-attachment: fixed;*/
-    /*background-position: right;*/
-    /*background-size: 100%;*/
 
     background: url("images/vinyl.jpeg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -17,13 +11,6 @@ body{
 
 div.main-content{
     width: 100%;
-
-    /*background-image: url("https://static.pexels.com/photos/92083/pexels-photo-92083-large.jpeg");*/
-    /*background-repeat: no-repeat;*/
-    /*background-attachment: fixed;*/
-    /*background-position: right;*/
-    /*background-size: 100%;*/
-
 }
 .contain-input{
     padding-top: 5px;
@@ -75,7 +62,7 @@ footer p{
     letter-spacing: 3px;
     margin: 4px 0 0 4px;
 }
-i{
+.social-icon{
     float: right;
     letter-spacing: 10px;
     vertical-align: text-bottom;
@@ -202,4 +189,11 @@ text-align:left;
 .tmRow{
     color:white;
     background-color: rgba(21, 21, 21, 0.8);
+}
+/*-------wikipedia-------*/
+.wiki-div{
+    background-color: rgba(224, 224, 224, 0.8);
+    padding: 10px;
+    text-align: left;
+    font-weight: 500;
 }
