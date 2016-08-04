@@ -80,8 +80,8 @@ function searchButtonClick (){
 var player;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('ytPlayer', {
-        height: '390',
-        width: '640', //height and width can be modified
+        height: '100%',
+        width: '100%', //height and width can be modified
         videoId: searchVideoId,
         playerVars: {'autoplay' : 1},
         events: {
