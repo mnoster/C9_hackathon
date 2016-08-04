@@ -58,7 +58,8 @@ function searchTicketMaster(search_term, latLong) {
             if (json.hasOwnProperty('_embedded') == false) {
                 no_results = true;
                 if ($('#postalCode').val() == '') {
-                    $('#zipSearch, #narrowResults').css("visibility", "hidden");
+                    $('#zipSearch').css("visibility", "hidden");
+                    $('#narrowResults').css("visibility", "hidden");
                 }
                 $('.tmRow').remove();
                 $('<tr>').addClass('tmRow').html('TicketMaster does not have any upcoming events for ' + search_term).appendTo('#results');
@@ -101,7 +102,8 @@ function searchTicketMaster(search_term, latLong) {
                     var buyLinkTD = $('<td>').html('<a target="_blank" href="' + buyLink + '">Buy Tickets</a>');
                     tr.append(nameTD, dateTimeTD, locationTD, buyLinkTD);
                     $('#results').append(tr);
-                    $('#zipSearch, #narrowResults').css("visibility", "visible");
+                    $('#zipSearch').css("visibility", "visible");
+                    $('#narrowResults').css("visibility", "visible");
                 }
             }
         },
