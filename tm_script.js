@@ -1,11 +1,25 @@
+var no_results = false;
+var search_term = null;
+var postal_code = null;
+
 $(document).ready(function () {
-    $('.ticketmaster-container').css("visibility","hidden");
+    $('.ticketmaster-container').css("visibility", "hidden");
     $('.embedTrack').click(function () {
-        var search_term = $('.artistName').val();
-        var postal_code = $('#postalCode').val();
+        $('.ticketmaster-container').css("visibility", "visible");
+        search_term = $('.artistName').val();
+        postal_code = $('#postalCode').val();
         if (search_term == '') return;
         if (postal_code == '') {
             searchTicketMaster(search_term, '');
+        } else {
+            getLatLong(postal_code);
+        }
+    });
+
+    $('#narrowResults').click(function () {
+        $('.ticketmaster-container').css("visibility", "visible");
+        if (no_results == true || postal_code == '') {
+            return;
         } else {
             getLatLong(postal_code);
         }
@@ -19,9 +33,11 @@ function getLatLong(postal_code) {
         async: true,
         dataType: "json",
         success: function (result) {
+            console.log('getLatLong: ');
+            console.log(result);
             var lat = result.results[0].geometry.location.lat;
             var long = result.results[0].geometry.location.lng;
-            var search_term = $('.artistName').val();
+            if ($('.artistName').val() != '') search_term = $('.artistName').val();
             var latLong = lat + ',' + long;
             searchTicketMaster(search_term, latLong);
         },
@@ -37,7 +53,13 @@ function searchTicketMaster(search_term, latLong) {
         async: true,
         dataType: "json",
         success: function (json) {
+            console.log('searchTicketMaster: ');
+            console.log(json);
             if (json.hasOwnProperty('_embedded') == false) {
+                no_results = true;
+                if ($('#postalCode').val() == '') {
+                    $('#zipSearch, #narrowResults').css("visibility", "hidden");
+                }
                 $('.tmRow').remove();
                 $('<tr>').addClass('tmRow').html('TicketMaster does not have any upcoming events for ' + search_term).appendTo('#results');
                 return;
@@ -79,8 +101,8 @@ function searchTicketMaster(search_term, latLong) {
                     var buyLinkTD = $('<td>').html('<a target="_blank" href="' + buyLink + '">Buy Tickets</a>');
                     tr.append(nameTD, dateTimeTD, locationTD, buyLinkTD);
                     $('#results').append(tr);
+                    $('#zipSearch, #narrowResults').css("visibility", "visible");
                 }
-                $('.ticketmaster-container').css("visibility","visible");
             }
         },
         error: function (xhr, status, err) {
