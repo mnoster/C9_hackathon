@@ -1,8 +1,22 @@
+/**
+ * searchVideoId - global variable to hold the video id for the YouTube player
+ * @type {string}
+ */
 var searchVideoId = "";
+/**
+ * firstTime - global variable to hold the first time played switch
+ * @type {string}
+ */
 var firstTime = true;
+/**
+ * Listen for the document to load and set the search button Click handler
+ */
 $(document).ready(function(){
     searchButtonClick ();
 });//end of dom load
+/**
+ * searchButtonClick - click handler for search button does an ajax call for the YouTube data api and loads the video player
+ */
 function searchButtonClick (){
     //button click handler
     $('.embedTrack').click(function(){
