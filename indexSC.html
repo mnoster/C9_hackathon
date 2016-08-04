@@ -3,8 +3,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styleSC.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="//connect.soundcloud.com/sdk.js"></script>
     <script src="SCscript.js"></script>
@@ -16,10 +18,10 @@
 
 <header class="navbar navbar-fixed-top">
     <div class="container-fluid">
-        <div class = "navbar-header col-sm-9 col-sm-offset-1">
+        <div class="navbar-header col-sm-9 col-sm-offset-1">
             <!--<a class = "navbar-brand" href = "#">AB</a>-->
-            <input class="artistName form-control" placeholder = 'Enter Artist Name'>
-    </div>
+            <input class="artistName form-control" placeholder='Enter Artist Name'>
+        </div>
         <button class='embedTrack btn btn-default btn-success col-sm-1'>search</button>
     </div>
 </header>
@@ -27,12 +29,12 @@
 <div class='container main-container'>
     <div class='main-content row'>
 
-    <div class="container-fluid search-container">
+        <div class="container-fluid search-container">
 
-        <!--<input class="artistName form-control" placeholder = 'Enter Artist Name'>-->
-        <!--<button class='embedTrack btn btn-default btn-success col-sm-1'>search</button>-->
+            <!--<input class="artistName form-control" placeholder = 'Enter Artist Name'>-->
+            <!--<button class='embedTrack btn btn-default btn-success col-sm-1'>search</button>-->
 
-    </div>
+        </div>
     </div>
     <div class="container contain-api-data">
         <div class='contain-tweets row'>
@@ -46,9 +48,9 @@
             <div id="twitter-feed" class=" pre-scrollable col-xs-4 pull-right">
                 <table class="table">
                     <thead class=" table-bordered">
-                    <tr class="" >
-                        <th><img  src='http://www.meteo.go.tz/site/images/twit.png' alt="Twitter Logo" height="32"
-                                  width="32"> Artist Mentions
+                    <tr class="">
+                        <th><img src='http://www.meteo.go.tz/site/images/twit.png' alt="Twitter Logo" height="32"
+                                 width="32"> Artist Mentions
                         </th>
                     </tr>
                     </thead>
@@ -69,7 +71,7 @@
 
     <!-----this is for ticketmaster-->
     <div class="container ticketmaster-container">
-        <div class="student-add-form col-sm-12 col-md-3 pull-right">
+        <div class="col-sm-12 col-md-3 pull-right">
             <!--<h4>Search TicketMaster</h4>-->
             <!--<div class="form-group input-group">-->
             <!--<span class="input-group-addon">-->
@@ -80,13 +82,14 @@
             <!--</div>-->
 
 
-            <div class="form-group input-group">
+            <div id="zipSearch" class="form-group input-group">
             <span class="input-group-addon">
                 <span class="glyphicon glyphicon-map-marker"></span>
             </span>
-                <input type="text" class="form-control" name="postalCode" id="postalCode" placeholder="Narrow results by ZIP code" >
+                <input type="text" class="form-control" name="postalCode" id="postalCode"
+                       placeholder="Narrow results by ZIP code">
             </div>
-            <button type="button" id="narrowResults" class="btn btn-success embedTrack" >narrow results</button>
+            <button type="button" id="narrowResults" class="btn btn-success embedTrack">narrow results</button>
         </div>
 
         <div class="result-list-container col-sm-12 col-md-8">
