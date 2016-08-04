@@ -22,7 +22,7 @@ function searchButtonClick (){
                 var firstScriptTag = document.getElementsByTagName('script')[0];
                 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
                 if (!firstTime){
-                    player.loadVideoById(searchVideoId);
+                    player.cueVideoById({'videoId':searchVideoId});
                 }
             },
             error: function(result) {
@@ -69,6 +69,7 @@ function onYouTubeIframeAPIReady() {
         height: '390',
         width: '640', //height and width can be modified
         videoId: searchVideoId,
+        playerVars: {'autoplay' : 1},
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
