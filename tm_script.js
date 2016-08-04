@@ -1,6 +1,6 @@
-var no_results = false;
-var search_term = null;
-var postal_code = null;
+var no_results = false; //sets to true when no results are returned from ticketmaster
+var search_term = null; //artist search field
+var postal_code = null; //search field appears when ticketmaster results are visible
 
 $(document).ready(function () {
     $('.ticketmaster-container').css("visibility", "hidden");
@@ -10,9 +10,9 @@ $(document).ready(function () {
         postal_code = $('#postalCode').val();
         if (search_term == '') return;
         if (postal_code == '') {
-            searchTicketMaster(search_term, '');
+            searchTicketMaster(search_term, ''); //call function to query ticketmaster with no zip code
         } else {
-            getLatLong(postal_code);
+            getLatLong(postal_code); //call function to query google maps with zip code to get lat and long coordinates
         }
     });
 
@@ -34,14 +34,15 @@ function getLatLong(postal_code) {
         dataType: "json",
         success: function (result) {
             console.log('getLatLong: ');
-            console.log(result);
+            console.log(result); //ajax result for debugging
             var lat = result.results[0].geometry.location.lat;
             var long = result.results[0].geometry.location.lng;
             if ($('.artistName').val() != '') search_term = $('.artistName').val();
             var latLong = lat + ',' + long;
             searchTicketMaster(search_term, latLong);
         },
-        error: function (xhr, status, err) {
+        error: function (xhr, status, err) { //unfinished error function
+            console.log(result);
         }
     })
 }
@@ -54,13 +55,13 @@ function searchTicketMaster(search_term, latLong) {
         dataType: "json",
         success: function (json) {
             console.log('searchTicketMaster: ');
-            console.log(json);
-            if (json.hasOwnProperty('_embedded') == false) {
+            console.log(json); //ajax result for debugging
+            if (json.hasOwnProperty('_embedded') == false) { //indicates there are no upcoming events for artist on file with ticketmaster
                 no_results = true;
                 if ($('#postalCode').val() == '') {
                     $('#zipSearch, #narrowResults').css("visibility", "hidden");
                 }
-                $('.tmRow').remove();
+                $('.tmRow').remove(); //remove any existing rows
                 $('<tr>').addClass('tmRow').html('TicketMaster does not have any upcoming events for ' + search_term).appendTo('#results');
                 return;
             }
@@ -70,17 +71,17 @@ function searchTicketMaster(search_term, latLong) {
             function eval_results(i) {
                 for (; i < json._embedded.events.length; i++) {
                     var event_object = json._embedded.events[i];
-                    console.log(i + ' array position has groupId of: ' + event_object.groupId);
+                    console.log(i + ' array position has groupId of: ' + event_object.groupId); //logging of each event array # for debugging
                     if (i > 0 && i < json._embedded.events.length && event_object.groupId == previous_groupId) {
-                        previous_groupId = event_object.groupId;
+                        previous_groupId = event_object.groupId; //store previous group id (artist id in ticketmaster database) to avoid repeated results in table
                         i++;
                         if (i < json._embedded.events.length) {
-                            eval_results(i);
+                            eval_results(i); //recursive function call to get next result in array
                         }
                         return;
                     }
                     previous_groupId = event_object.groupId;
-                    if (event_object.eventUrl === undefined) {
+                    if (event_object.eventUrl === undefined) { //use alternate URL if ticketmaster does not have main purchase URL stored as object property
                         var buyLink = 'http://www.ticketmaster.com/event/' + event_object.id;
                     } else {
                         var buyLink = event_object.eventUrl;
@@ -105,7 +106,8 @@ function searchTicketMaster(search_term, latLong) {
                 }
             }
         },
-        error: function (xhr, status, err) {
+        error: function (xhr, status, err) { //unfinished error processing
+            console.log(json);
         }
     })
 }
