@@ -24,14 +24,12 @@ div.main-content{
     margin-top: 5px;
 }
 
-.search-container{
-
-}
 .main-container{
-        margin-top: 10vh;
+    margin-top: 10vh;
+    text-align: center;
 }
 h1{
-    font-size: 300px;
+    font-size: 70px;
 }
 .navbar{
     background-color: rgba(0, 0, 0, .8);
@@ -42,7 +40,7 @@ h1{
 }
 .artist_base{
     color: whitesmoke;
-    font-size: larger;
+    /*font-size: larger;*/
     text-shadow: 3px 2px #222222;
 }
 /********************Footer to hold about us link and social media links**********************/
@@ -68,10 +66,14 @@ footer p{
     vertical-align: text-bottom;
     margin: 4px;
 }
-.yt_section{
+.yt_styling{
     height: 500px;
+    visibility: visible;
 }
 .main-content{
+    text-align: center;
+}
+.main-title{
     text-align: center;
 }
 .twit-image{
@@ -80,7 +82,7 @@ footer p{
 }
 #SCplayer{
     display: inline-block;
-    width:80%;
+    width:90%;
 }
 #twitter-feed{
     display: inline-block;
@@ -90,7 +92,8 @@ footer p{
     border-radius: 2px;
     background-color: #2e6da4;
     visibility: hidden;
-
+    margin-top: 10vh;
+    text-align: center;
 }
 
 .visualAudible_body{
@@ -115,8 +118,8 @@ nav{
     display: inline-block;
 
 }
-.contain-tweets{
-    margin-top: 10px;
+.contain-player{
+    margin: 10px 10px;
     visibility: hidden;
     text-align:center;
 
@@ -140,7 +143,7 @@ th{
     overflow: hidden;
     font-size:1.5em;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 100px;
     color: white;
     transform: translateY(100%);
@@ -161,7 +164,7 @@ th{
 .spotify_albums_list{
     text-align: center;
 }
-p{
+.about{
     width: 250px;
     display: inline;
     height:250px;
@@ -176,7 +179,7 @@ li img{
 }
 #channelLink {
     display: inline;
-text-align:left;
+    text-align:left;
 }
 #channelLink a {
     color: #4F634F;
@@ -196,4 +199,5 @@ text-align:left;
     padding: 10px;
     text-align: left;
     font-weight: 500;
+    margin: 10px 10px 10vh 10px;
 }

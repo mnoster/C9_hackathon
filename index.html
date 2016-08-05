@@ -14,38 +14,34 @@
 <body>
 <header class="navbar navbar-fixed-top">
     <a class="navbar-brand" href="index.html">AB</a>
-    <div class="navbar-header contain-input col-xs-9 col-sm-3 ">
+    <div class="navbar-header contain-input col-xs-8 col-sm-3 ">
 
         <input class="artistName form-control" placeholder='Enter Artist Name'>
     </div>
     <button class='embedTrack btn btn-default btn-success'>search</button>
 </header>
 <div class='container main-container'>
-    <div class='main-content row'>
-        <div class="container-fluid search-container">
+    <div class='main-title row'>
+        <div class="container search-container">
 
             <h1 class="artist_base">ArtistBase</h1>
             <h2 class="instructions">Welcome! Enter an artist name in the search bar.</h2>
         </div>
-        <div class="container-fluid search-container">
-        </div>
-    </div>
-    <div class="container contain-api-data">
-        <div class='contain-tweets col-xs-12'>
-            <div id="SCplayer"></div>
-        </div>
     </div>
 
-    <div class='container-fluid main-container'>
-        <div class='main-content row'>
+    <div class="row">
+        <!--this is for spotify -->
+        <ul class="spotify_albums_list col-xs-12"></ul>
+    </div>
+    <div class='container main-container1'>
+        <div class='row'>
             <!--this is for youtube-->
-            <div class="yt_section col-xs-12 col-sm-8 col-md-8 ">
+            <div class="yt_main col-xs-12 col-sm-8 col-md-6 col-lg-8 ">
                 <div id="ytPlayer" class="col-sm-12"></div>
-                <div>
-                    <div id="channelLink" class="col-sm-6"></div>
-                </div>
+                <div id="channelLink" class=""></div>
             </div>
-            <div id="twitter-feed" class=" pre-scrollable col-xs-10 col-xs-push-1 col-sm-3">
+            <!--this is for Twitter-->
+            <div id="twitter-feed" class=" pre-scrollable col-xs-12 col-sm-4 col-md-5 col-lg-4">
                 <table class="table">
                     <thead class=" table-bordered">
                     <tr class="">
@@ -61,9 +57,10 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <!--this is for spotify -->
-        <ul class="spotify_albums_list col-xs-12"></ul>
+    <div class="container contain-api-data">
+        <div class='contain-player col-xs-12'>
+            <div id="SCplayer"></div>
+        </div>
     </div>
     <!-----this is for ticketmaster-->
     <div class="container ticketmaster-container">
@@ -79,7 +76,7 @@
             <button type="button" class="btn btn-success embedTrack col-xs-12" id="narrowResults">Narrow Results
             </button>
         </div>
-        <div class="result-list-container col-xs-12 col-sm-12 col-md-8">
+        <div class="result-list-container col-xs-12 col-md-8">
             <table class="result-list table table-condensed">
                 <thead>
                 <tr>
@@ -97,12 +94,12 @@
 </div>
 <article class="container">
     <div class="row">
-<div class="wiki-div col-xs-11 col-sm-10 "></div>
+<div class="wiki-div col-xs-12 col-sm-10 "></div>
     </div>
 </article>
 <footer class="footer">
-    <div class="col-xs-12 col-sm-12">
-        <p>About</p>
+    <div class="col-xs-12">
+        <p class="about">About</p>
         <span class="fa fa-facebook-square social-icon" aria-hidden="true"></span>
         <span class="fa fa-twitter-square social-icon" aria-hidden="true"></span>
         <span class="fa fa-instagram social-icon" aria-hidden="true"></span>
