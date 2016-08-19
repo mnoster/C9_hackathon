@@ -13,6 +13,8 @@ var firstTime = true;
  */
 $(document).ready(function(){
     searchButtonClick ();
+    $('.yt_section').css('visibility','hidden');
+
 });//end of dom load
 /**
  * searchButtonClick - click handler for search button does an ajax call for the YouTube data api and loads the video player
@@ -35,6 +37,8 @@ function searchButtonClick (){
                 tag.src = "https://www.youtube.com/iframe_api";
                 var firstScriptTag = document.getElementsByTagName('script')[0];
                 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                
+                $('.yt_main').addClass('yt_styling');
                 if (!firstTime){
                     player.cueVideoById({'videoId':searchVideoId});
                 }

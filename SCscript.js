@@ -6,6 +6,9 @@
  */
 $(document).ready(function() {
     apply_all_click_handlers();
+    $('.wiki-div').css("visibility","hidden");
+    $('.main-content').css("visibility","hidden");
+    $('.main-container1').css("visibility","hidden");
 
 });
 function apply_all_click_handlers() {
@@ -15,7 +18,7 @@ function apply_all_click_handlers() {
         getSoundCloudSong(); //when the document loads the api functions will be ready
         getTwitterInfo();
         sp_find_artist_info();
-
+        getWiki();
     });
 }
 // initialization
@@ -36,7 +39,7 @@ function getSoundCloudSong(){ //this is the function that holds the SOundcloud s
         }, function(res) {
             $("#SCplayer").html(res.html); //this will get the data that the call sends back to and append it to the dom
             $('<div><h3>Latest Tracks</h3></div>').addClass('artist_base').prependTo($('#SCplayer'));//this is the div that will be appended to the dom above the player
-            $('.contain-tweets').css("visibility","visible");// this will make the tweet box visible if the function is success
+            $('.contain-player').css("visibility","visible");// this will make the tweet box visible if the function is success
         });
 }
 
@@ -63,7 +66,7 @@ function getTwitterInfo(){ // this is the fn that ancapsulates teh twitter ajax 
             },
             error: function (response) {
                 console.log('error!');
-                $('.contain-tweets').css("visibility","visible");
+                $('.contain-player').css("visibility","visible");
                 $('.twitter-table-body').text("Oh no! There was an error with Twitter's server.").css({'color': 'red'});
             }
 
@@ -74,7 +77,7 @@ function getTwitterInfo(){ // this is the fn that ancapsulates teh twitter ajax 
 //-------spotify-----
 function sp_find_artist_info(){ 
     var artist = $(".artistName").val();
-    console.log('Artist', artist);
+    artist = toTitleCase(artist);
     $.ajax({
         url: "https://api.spotify.com/v1/search",
         method: "GET",
@@ -97,6 +100,34 @@ function sp_find_artist_info(){
                 $(".spotify_albums_list").append(sp_container);//append content to the dom
 
             }
+            $('.spotify_albums_list').prepend($('<h1>').text(artist).addClass("artist_base"));
         }
     });
+}
+function toTitleCase(str)// this will return the first letter of each word as a string with capitalize, the wiki url requires the words to be capitalized
+{
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+function getWiki(){
+    var artist = $('.artistName').val();
+    artist = toTitleCase(artist);
+    artist = artist.replace(/\s/g, "_");
+    artist = artist.replace(".", "_");
+    console.log('artist wiki:' , artist);
+    $.ajax({
+        type: "GET",
+        url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page="+artist+"&callback=?",
+        contentType: "application/json; charset=utf-8",
+        async: false,
+        dataType: "json",
+        success: function (data) {
+            console.log('wiki data: ', data);
+            var markup = data.parse.text["*"];
+            var blurb = $('.wiki-div').html(markup);
+            $('.wiki-div').css("visibility","visible");
+        },
+        error: function (errorMessage) {
+        }
+    });
+
 }
