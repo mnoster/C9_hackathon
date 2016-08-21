@@ -7,8 +7,10 @@ body{
     background-size: cover;
 }
 /**************background style for search page*****************/
-
-
+#logo{
+    padding: 15px 0 15px 0;
+    margin-left: 10px;
+}
 div.main-content{
     width: 100%;
 }
@@ -116,16 +118,12 @@ nav{
     line-height: 20px;
     padding:10px;
     display: inline-block;
-
 }
 .contain-player{
     margin: 10px 10px;
     visibility: hidden;
     text-align:center;
-
 }
-
-
 td{
     padding:10px;
 }
@@ -135,8 +133,6 @@ th{
 .ticketmaster-container{
     margin-bottom: 50px;
 }
-
-
 /*-------------styling for spotify api albums------------------*/
 .sp_album_title{
     background-color: rgba(0,0,0,.6);
