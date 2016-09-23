@@ -33,8 +33,8 @@ function getLatLong(postal_code) {
         async: true,
         dataType: "json",
         success: function (result) {
-            console.log('getLatLong: ');
-            console.log(result); //ajax result for debugging
+            // console.log('getLatLong: ');
+            // console.log(result); //ajax result for debugging
             var lat = result.results[0].geometry.location.lat;
             var long = result.results[0].geometry.location.lng;
             if ($('.artistName').val() != '') search_term = $('.artistName').val();
@@ -54,8 +54,8 @@ function searchTicketMaster(search_term, latLong) {
         async: true,
         dataType: "json",
         success: function (json) {
-            console.log('searchTicketMaster: ');
-            console.log(json); //ajax result for debugging
+            // console.log('searchTicketMaster: ');
+            // console.log(json); //ajax result for debugging
             if (json.hasOwnProperty('_embedded') == false) { //indicates there are no upcoming events for artist on file with ticketmaster
                 no_results = true;
                 if ($('#postalCode').val() == '') {
@@ -71,7 +71,7 @@ function searchTicketMaster(search_term, latLong) {
             function eval_results(i) {
                 for (; i < json._embedded.events.length; i++) {
                     var event_object = json._embedded.events[i];
-                    console.log(i + ' array position has groupId of: ' + event_object.groupId); //logging of each event array # for debugging
+                    // console.log(i + ' array position has groupId of: ' + event_object.groupId); //logging of each event array # for debugging
                     if (i > 0 && i < json._embedded.events.length && event_object.groupId == previous_groupId) {
                         previous_groupId = event_object.groupId; //store previous group id (artist id in ticketmaster database) to avoid repeated results in table
                         i++;
