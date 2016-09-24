@@ -30,7 +30,21 @@ function searchButtonClick (){
             url: 'http://s-apis.learningfuze.com/hackathon/youtube/search.php',
             data: {q:artist,maxResults:3,detailLevel:'verbose'},
             success: function(result) {
-                searchVideoId = result.video[0].id;
+                console.log("result: " , result);
+                searchVideoId = result.data;
+                console.log('search id:' , searchVideoId);
+                var objKeys = Object.keys(searchVideoId);
+                var vidID = objKeys[0];
+                searchVideoId = result.data[vidID].id.videoId;
+                if(searchVideoId == null){
+                    vidID = objKeys[1];
+                    searchVideoId = result.data[vidID].id.videoId;
+                }
+                if(searchVideoId == null){
+                    vidID = objKeys[2];
+                    searchVideoId = result.data[vidID].id.videoId;
+                }
+                // console.log('search id:' , searchVideoId);
                 console.log('AJAX Success video function called for,'+artist+' with the following result:', result);
                 // 2. This code loads the IFrame Player API code asynchronously.
                 var tag = document.createElement('script');
